@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color:#e6f2ff;}
+
+.card-header
+{ color: white;}
+
+
+  
+.form-field-full-width{
+    width: 310px;
+  }
+  .button-row{
+    margin: 8px 8px 8px 0;
+  }
+
+  .xng-breadcrumb-root {
+   // padding: 8px 16px;
+    
+    display: inline;
+    border-radius: 0;
+}
+
+label.xng-breadcrumb-trail {
+    margin-bottom: 0;
+    color: orange;
+}
+.col-md-12{
+  padding-right: 0px;
+  padding-left: 0px;
+}  
+.xng-breadcrumb-separator {
+    padding: 0 0;
+}

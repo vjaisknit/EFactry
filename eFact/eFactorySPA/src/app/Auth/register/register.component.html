@@ -1,3 +1,60 @@
-<p>
-  register works!
-</p>
+
+<div class="container">
+  <div class="row text-center justify-content-center">
+    <div class="card col-md-12">
+      <h4 class="card-header bg-success">User Registration</h4>
+      <div class="card-body col-md-12">
+        <div class="col-md-12">        
+
+            <div>              
+                <form [formGroup]= "firstFormGroup">            
+
+                  <div>
+                    <mat-form-field class="form-field-full-width center">
+                      <mat-label>User Name</mat-label>
+                      <input matInput formControlName="username" width="100" placeholder="User Name" required>
+                      <mat-error>Username is reqired.</mat-error>
+
+                    </mat-form-field>
+                  </div>
+
+                  <div>
+                    <mat-form-field class="form-field-full-width center">
+                      <mat-label>Email</mat-label>
+                      <input matInput formControlName="email" (keyup)= "checkEmailValidity()" placeholder="Email" required>
+                      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                      
+                    </mat-form-field>
+                  </div>
+                  <div>
+                    <mat-form-field class="form-field-full-width center">
+                      <mat-label>Password</mat-label>
+                      <input matInput formControlName="password" placeholder="Password" required>
+                      <mat-error>Password is reqired.</mat-error>
+                    </mat-form-field>
+                  </div>
+
+                  <div class="button-row">
+                    <button class="button-row"  [disabled]= "firstFormGroup.invalid" (click)="signup()"  mat-raised-button
+                      color="primary">Sign Up</button>
+
+                    <button mat-raised-button color="warn">Cancel</button>
+
+                  </div>
+                  <div>
+                   <ul class="text-danger list-unstyled " *ngIf= "errors">
+                    <li *ngFor="let error of errors">{{error}}</li>
+                   </ul>
+                  </div>
+
+                  
+                </form>
+          
+            </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
